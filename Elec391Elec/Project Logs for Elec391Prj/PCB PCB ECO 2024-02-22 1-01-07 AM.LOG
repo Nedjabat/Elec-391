@@ -1,0 +1,13 @@
+Add Component: Footprint Not Found 691137710002
+Add Component: Footprint Not Found 691137710002
+Add Component: Footprint Not Found 691137710002
+Add Pin To Net: Unknown Pin: Pin J1-1
+Add Pin To Net: Unknown Pin: Pin J1-2
+Add Pin To Net: Unknown Pin: Pin J2-1
+Add Pin To Net: Unknown Pin: Pin J2-2
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Added Member To Class: ClassName=IO Member=Component C2 Capacitor 10 uF +/- 10% 16 V 0805
+Add Class Member: Failed to add class member : Component J1 691137710002
+Add Class Member: Failed to add class member : Component J2 691137710002
+Add Class Member: Failed to add class member : Component J3 691137710002

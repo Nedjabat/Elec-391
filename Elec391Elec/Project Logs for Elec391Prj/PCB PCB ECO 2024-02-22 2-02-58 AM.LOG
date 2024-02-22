@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=NetDS2_2 Pin=R1-1
+Removed Pin From Net: NetName=GND Pin=R1-2
+Removed Pin From Net: NetName=GND Pin=R2-1
+Removed Pin From Net: NetName=NetDS1_2 Pin=R2-2
+Change Footprint: Footprint Not Found 0603
+Change Component Footprint: Designator=R1 Old Footprint=Res10mm_LGE1.0 New Footprint=RESC1608X55N
+Change Component Comment : Designator=R2 Old Comment=G-Res New Comment=RC0603FR-13620RL
+Change Component Comment : Designator=R1 Old Comment=G-Res New Comment=RT0603BRE07250RL
+Change component parameters: Designator = "R1" ("R1"); Footprint = "Res10mm_LGE1.0"; UniqueID = "\PBOGMSCR" ("\PBOGMSCR")
+Change component parameters (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RT0603BRE07250RL/Yageo/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Yageo"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "RT0603BRE07250RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1608 Yageo"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/RT0603BRE07250RL/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RT0603BRE07250RL/Yageo/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2" ("R2"); Footprint = "Res10mm_LGE1.0"; UniqueID = "\OSUZGGVY" ("\OSUZGGVY")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "RC0603FR-13620RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=NetDS1_2 Pin=R1-2
+Added Pin To Net: NetName=NetDS2_2 Pin=R2-1
+Added Pin To Net: NetName=GND Pin=R2-2

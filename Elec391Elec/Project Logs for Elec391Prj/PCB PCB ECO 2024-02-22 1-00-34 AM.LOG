@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Pin From Net: NetName=NetDS2_2 Pin=R1-2
+Removed Pin From Net: NetName=NetDS1_2 Pin=R3-2
+Removed Member From Class: ClassName=IO Member=P?
+Removed Member From Class: ClassName=IO Member=R3
+Change Component Footprint: Designator=J4 Old Footprint=KLD_XLGE1.2 New Footprint=KLD_XLGE1.2
+Change Component Footprint: Designator=R1 Old Footprint=RESA60-630X240 New Footprint=Res10mm_LGE1.0
+Change Component Footprint: Designator=R2 Old Footprint=RESA60-630X240 New Footprint=Res10mm_LGE1.0
+Change Component Comment : Designator=R2 Old Comment=MFR-25FBF52-100R New Comment=G-Res
+Change Component Comment : Designator=R1 Old Comment=MFR-25FBF52-475R New Comment=G-Res
+Change Component Designator: OldDesignator=C1 NewDesignator=C2
+Change Component Designator: OldDesignator=C2 NewDesignator=C1
+Change Managed Component Library Link : Designator=R1 Old VaultGUID=45D65668-4753-416C-A90D-62F74200805E New VaultGUID= Old ItemGUID=9BCE3850-ECA9-476F-A8A7-23F885904461 New ItemGUID= Old RevisionGUID=FD803913-3C06-4C25-B68A-ED676361B9D5 New RevisionGUID=
+Change Managed Component Library Link : Designator=R2 Old VaultGUID=45D65668-4753-416C-A90D-62F74200805E New VaultGUID= Old ItemGUID=6210039B-EAC4-4B4E-9825-299BD223B862 New ItemGUID= Old RevisionGUID=6F820C60-ADF2-461E-B558-BC76D7B30DD6 New RevisionGUID=
+Change component parameters: Designator = "R1" ("R1"); Footprint = "RESA60-630X240"; UniqueID = "\PJLGADWZ" ("\PJLGADWZ")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "J1-0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "600"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2" ("R2"); Footprint = "RESA60-630X240"; UniqueID = "\WHGBCNFF" ("\WHGBCNFF")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "J1-0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "250"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found 691137710002
+Add Component: Footprint Not Found 691137710002
+Add Component: Footprint Not Found 691137710002
+Add Pin To Net: Unknown Pin: Pin J1-1
+Add Pin To Net: Unknown Pin: Pin J1-2
+Add Pin To Net: Unknown Pin: Pin J2-1
+Add Pin To Net: Unknown Pin: Pin J2-2
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Added Pin To Net: NetName=NetDS2_2 Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R1-2
+Added Pin To Net: NetName=NetDS1_2 Pin=R2-2
+Add Class Member: Failed to add class member : Component J1 691137710002
+Add Class Member: Failed to add class member : Component J2 691137710002
+Add Class Member: Failed to add class member : Component J3 691137710002
