@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <util/atomic.h>
 
 //encoder pins
 #define ENCA_M1 2  //M1 ENC YELLOW, GPIO16/RX2
@@ -14,13 +15,16 @@
 
 #define PWM_M2  9  //M2 ENABLE/PWM, GPIO25/D25
 #define CW_M2   10 //M2 CLOCKWISE/UP, GPIO26/D26
+
 #define CCW_M2  11 //M2 COUNTERCLOCKWISE/DOWN, GPIO27/D27
 
 #define LASER   12 //Laser pin, GPIO32/D32
 //GPIOs 20, 24, 28, 29, 30, and 31 no accessible.
 
 // globals
-int pos_M1 = 0;
+volatile int pos_M1 = 0;
+
+//int pos_M1 = 0;
 long prevT_M1 = 0;
 float eprev_M1 = 0;
 float eintegral_M1 = 0;
@@ -31,9 +35,9 @@ float eprev_M2 = 0;
 float eintegral_M2 = 0;
 
 //PID gain values
-float kp_M1 = 60;   //60
-float ki_M1 = 600;  //600
-float kd_M1 = 0.1;  //0.1
+float kp_M1 = 1;   //60
+float ki_M1 = 0;  //600
+float kd_M1 = 0;  //0.1
 
 float kp_M2 = 1;   //60
 float ki_M2 = 0;  //600
@@ -47,7 +51,7 @@ void setMotor();
 //to degrees: 408/360 = 1.133... encounder counts per degree
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   pinMode(ENCA_M1, INPUT);
   pinMode(ENCB_M1, INPUT);
 
@@ -72,49 +76,57 @@ void loop() {
 
   int target_M1 = 1200;
 
-  //time difference
   long currT_M1 = micros();
-  float deltaT_M1 = ((float)(currT_M1-prevT_M1))/1.0e6;
+  float deltaT_M1 = ((float)(currT_M1-prevT_M1))/1.0e6; //time difference
   prevT_M1 = currT_M1;
 
-  //error calculation
-  int e_M1 = pos_M1 - target_M1; //might need to switch sign
+  int pos = 0; 
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE) { //atomic block to ensure no misread
+    pos = pos_M1;
+  }
 
-  //derivative
-  float dedt_M1 = (e_M1-eprev_M1)/(deltaT_M1);
+  int e_M1 = target_M1 - pos; //error calculation, might need to switch sign
+  float dedt_M1 = (e_M1-eprev_M1)/(deltaT_M1);  //derivative
+  eintegral_M1 = eintegral_M1 + e_M1*deltaT_M1; //integral
 
-  //integral
-  eintegral_M1 = eintegral_M1 + e_M1*deltaT_M1;
+  float u_M1 = kp_M1*e_M1 + kd_M1*dedt_M1 + ki_M1*eintegral_M1; //control signal
 
-  //control signal
-  float u_M1 = kp_M1*e_M1 + kd_M1*dedt_M1 + ki_M1*eintegral_M1;
-
-  //motor power
-  float pwr_M1 = fabs(u_M1);
+  float pwr_M1 = fabs(u_M1);  //motor power                              
   if(pwr_M1 > 255){
     pwr_M1 = 255;
   }
 
-  //motor direction
-  int dir_M1 = 1;
-  if(u_M1<0){
+  int dir_M1 = 1;  //motor direction     
+  if(u_M1<0){   
     dir_M1 = -1;
   }
+  
+  setMotor(dir_M1, PWM_M1, pwr_M1, CW_M1, CCW_M1);  //send signal to the motor
 
-  //send signal to the motor
-  setMotor(dir_M1, CW_M1, CCW_M1);
+  eprev_M1 = e_M1;    //store previous error
 
-  //store previous error
-  eprev_M1 = e_M1;
-
+  Serial.print("target: ");
   Serial.print(target_M1);
-  Serial.print(" ");
+  Serial.print(" | ");
+  Serial.print("position: ");
   Serial.print(pos_M1);
+  Serial.print(" | ");
+  Serial.print("pwm: ");
+  Serial.print(pwr_M1);
+  Serial.print(" | ");
+  Serial.print("u_M1:");
+  Serial.print(u_M1);
+  Serial.print(" | ");
+  Serial.print("dir_M1:");
+  Serial.print(dir_M1);
   Serial.println();
+
+  delay(100);
+ 
 }
 
-void setMotor(int dir, int in1, int in2){
-  //analogWrite(pwm, pwmVal); //implement speed control using driver
+void setMotor(int dir, int pwm, int pwmVal, int in1, int in2){
+  analogWrite(pwm, pwmVal); //implement speed control using driver
 
   if(dir == 1){
     digitalWrite(in1, HIGH);
@@ -131,8 +143,7 @@ void setMotor(int dir, int in1, int in2){
 }
 
 void readEncoderM1(){
-  int b = digitalRead(ENCB_M1);
-  if(b>0){
+  if(digitalRead(ENCB_M1)>0){
     pos_M1++;
   }
   else{
@@ -141,8 +152,7 @@ void readEncoderM1(){
 }
 
 void readEncoderM2(){
-  int b = digitalRead(ENCB_M2);
-  if(b>0){
+  if(digitalRead(ENCB_M2)>0){
     pos_M2++;
   }
   else{
