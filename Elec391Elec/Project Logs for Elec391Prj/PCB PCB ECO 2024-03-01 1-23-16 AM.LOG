@@ -1,0 +1,47 @@
+Removed Pin From Net: NetName=GND Pin=VR1-1
+Removed Pin From Net: NetName=+5 Pin=VR1-2
+Removed Pin From Net: NetName=+12 Pin=VR1-3
+Removed Member From Class: ClassName=IO Member=VR1
+Change Component Designator: OldDesignator=5V NewDesignator=DS1
+Change Component Designator: OldDesignator=12V NewDesignator=DS2
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U2 NewDesignator=U3
+Change Component Designator: OldDesignator=U3 NewDesignator=U4
+Added Component: Designator=U1(DCY0004A_M)
+Add component (AddParameter): Name = "Case/Package"; Value = "SOT-223"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.ti.com/lit/ds/symlink/lm1117.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "SNOS412N, 01/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dropout Voltage"; Value = "1.2V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Input Voltage"; Value = "15V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Ouput Current"; Value = "800mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Input Voltage"; Value = "2.6V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nominal Output Voltage"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nominal Supply Current"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Current"; Value = "800mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Voltage"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Outputs"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "4-Pin Small Outline Transistor, Body 6.5 x 3.5 mm, Pitch 2.3 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "DCY0004A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "TapeandReel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=+5 Pin=U1-2
+Added Pin To Net: NetName=+12 Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Change Net Name : Old Net Name=NetU1_4 New Net Name=NetU2_4
+Change Net Name : Old Net Name=NetU1_5 New Net Name=NetU2_5
+Change Net Name : Old Net Name=NetU1_8 New Net Name=NetU2_8
+Change Net Name : Old Net Name=NetU1_26 New Net Name=NetU2_26
+Change Net Name : Old Net Name=NetU1_27 New Net Name=NetU2_27
+Change Net Name : Old Net Name=NetU1_28 New Net Name=NetU2_28
+Added Member To Class: ClassName=IO Member=Component U1 LM1117IMP-5.0-NOPB
