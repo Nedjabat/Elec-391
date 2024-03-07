@@ -23,6 +23,7 @@
 
 // globals
 volatile int pos_M1 = 0;
+int pos = 0;
 
 //int pos_M1 = 0;
 long prevT_M1 = 0;
@@ -35,8 +36,8 @@ float eprev_M2 = 0;
 float eintegral_M2 = 0;
 
 //PID gain values
-float kp_M1 = 1;   //60
-float ki_M1 = 0;  //600
+float kp_M1 = 30;   //60
+float ki_M1 = 600;  //600
 float kd_M1 = 0;  //0.1
 
 float kp_M2 = 1;   //60
@@ -46,10 +47,7 @@ float kd_M2 = 0;  //0.1
 //function declarations
 void setMotor();
 
-//encoder resolution: (1 motor shaft rot/12 encouder counts) * (1 output shaft rot/34 motor shaft rot)
-//= 1 output shaft rotation / 408 encoder counts
-//to degrees: 408/360 = 1.133... encounder counts per degree
-
+//136 encoder counts / degrees
 void setup() {
   Serial.begin(9600);
   pinMode(ENCA_M1, INPUT);
@@ -77,10 +75,9 @@ void loop() {
   int target_M1 = 1200;
 
   long currT_M1 = micros();
-  float deltaT_M1 = ((float)(currT_M1-prevT_M1))/1.0e6; //time difference
+  float deltaT_M1 = ((float)(currT_M1-prevT_M1))/(1.0e6); //time difference
   prevT_M1 = currT_M1;
 
-  int pos = 0; 
   ATOMIC_BLOCK(ATOMIC_RESTORESTATE) { //atomic block to ensure no misread
     pos = pos_M1;
   }
@@ -97,7 +94,7 @@ void loop() {
   }
 
   int dir_M1 = 1;  //motor direction     
-  if(u_M1<0){   
+  if(u_M1<0){      //u_M1<0
     dir_M1 = -1;
   }
   
@@ -120,8 +117,6 @@ void loop() {
   Serial.print("dir_M1:");
   Serial.print(dir_M1);
   Serial.println();
-
-  delay(100);
  
 }
 
