@@ -1,0 +1,44 @@
+Removed Member From Class: ClassName=Microcontroller Member=P1
+Change Component Designator: OldDesignator=5V NewDesignator=DS1
+Change Component Designator: OldDesignator=12V NewDesignator=DS2
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Added Component: Designator=J4(AMPHENOL_67997-410HLF)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/67997-410HLF/Amphenol+FCI/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "609-3243-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Amphenol ICC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "67997-410HLF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/67997-410HLF/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/67997-410HLF/Amphenol+FCI/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ4_01 Pin=J4-01
+Added Pin To Net: NetName=NetJ4_01 Pin=U2-1
+Added Net: Name=NetJ4_01
+Added Pin To Net: NetName=NetJ4_02 Pin=J4-02
+Added Pin To Net: NetName=NetJ4_02 Pin=U2-14
+Added Net: Name=NetJ4_02
+Added Pin To Net: NetName=NetJ4_03 Pin=J4-03
+Added Pin To Net: NetName=NetJ4_03 Pin=U2-15
+Added Net: Name=NetJ4_03
+Added Pin To Net: NetName=NetJ4_04 Pin=J4-04
+Added Pin To Net: NetName=NetJ4_04 Pin=U2-19
+Added Net: Name=NetJ4_04
+Added Pin To Net: NetName=NetJ4_05 Pin=J4-05
+Added Pin To Net: NetName=NetJ4_05 Pin=U2-23
+Added Net: Name=NetJ4_05
+Added Pin To Net: NetName=NetJ4_06 Pin=J4-06
+Added Pin To Net: NetName=NetJ4_06 Pin=U2-20
+Added Net: Name=NetJ4_06
+Added Pin To Net: NetName=NetJ4_07 Pin=J4-07
+Added Pin To Net: NetName=NetJ4_07 Pin=U2-24
+Added Net: Name=NetJ4_07
+Added Pin To Net: NetName=NetJ4_08 Pin=J4-08
+Added Pin To Net: NetName=NetJ4_08 Pin=U2-22
+Added Net: Name=NetJ4_08
+Added Pin To Net: NetName=NetJ4_09 Pin=J4-09
+Added Pin To Net: NetName=NetJ4_09 Pin=U2-25
+Added Net: Name=NetJ4_09
+Added Pin To Net: NetName=NetJ4_10 Pin=J4-10
+Added Pin To Net: NetName=NetJ4_10 Pin=U2-21
+Added Net: Name=NetJ4_10
+Added Member To Class: ClassName=Microcontroller Member=Component J4 67997-410HLF

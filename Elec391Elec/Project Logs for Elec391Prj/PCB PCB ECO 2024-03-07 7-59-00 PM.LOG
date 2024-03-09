@@ -1,0 +1,20 @@
+Added Component: Designator=J?(TE_1-640456-2)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1-640456-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Encoder A B Pin=J?-1
+Added Pin To Net: NetName=Encoder A A Pin=J?-2
+Added Pin To Net: NetName=+5 Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=MotorA- Pin=J?-5
+Added Pin To Net: NetName=MotorA+ Pin=J?-6
+Added Pin To Net: NetName=Encoder B B Pin=J?-7
+Added Pin To Net: NetName=Encoder B A Pin=J?-8
+Added Pin To Net: NetName=+5 Pin=J?-9
+Added Pin To Net: NetName=GND Pin=J?-10
+Added Pin To Net: NetName=MotorB+ Pin=J?-11
+Added Pin To Net: NetName=MotorB- Pin=J?-12
+Added Member To Class: ClassName=IO Member=Component J? 1-640456-2
