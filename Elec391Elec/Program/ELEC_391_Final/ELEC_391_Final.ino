@@ -1,204 +1,121 @@
-#include <stdlib.h>
+#define ENCA 2 // YELLOW
+#define ENCB 3 // WHITE
+#define PWM_M1 5
+#define CW_M1 6
+#define CCW_M1 7
 
-#define TIMER   2 //ISR timer, 500hz
+volatile long encoder_M1 = 0;
 
-#define RST_M1  4 //M1 DEC RESET (active low)
-#define OE_M1   5 //M1 DEC OE (active low)
-#define SEL1_M1 6 //M1 DEC SEL1
-#define SEL2_M1 7 //M1 DEC SEL2
-
-#define CW_M1   8  //M1 CLOCKWISE/RIGHT
-#define CCW_M1  9  //M1 COUNTERCLOCKWISE/LEFT
-#define PWM_M1  10 //M1 ENABLE/PWM
-
-//#define CW_M2    //M1 CLOCKWISE/RIGHT
-//#define CCW_M2   //M1 COUNTERCLOCKWISE/LEFT]
-//#define PWM_M2   //M2 ENABLE/PWM
-
-#define D0_M1   12  //M1 DEC D0
-#define D1_M1   13  //M1 DEC D1
-#define D2_M1   14  //M1 DEC D2
-#define D3_M1   15  //M1 DEC D3
-#define D4_M1   16  //M1 DEC D4
-#define D5_M1   17  //M1 DEC D5
-#define D6_M1   18  //M1 DEC D6
-#define D7_M1   19  //M1 DEC D7
-
-//Global variables
-volatile long countData = 0; //32-bit count
-volatile long angle_M1 = 0;   //M1 angle in degrees
+int target_M1 = 120;
 
 //PID
-long prevT_M1 = 0;
-float eprev_M1 = 0;
-float eintegral_M1 = 0;
+volatile float u = 0;
+volatile long previousTime = 0;
+volatile float ePrevious = 0;
+volatile float eIntegral = 0;
 
-//int pos_M2 = 0;
-//long prevT_M2 = 0;
-//float eprev_M2 = 0;
-//float eintegral_M2 = 0;
-
-//PID gain values
-float kp_M1 = 30;   //60
-float ki_M1 = 0.1;  //600
+float kp_M1 = 2;   //60
+float ki_M1 = 0.02;  //600
 float kd_M1 = 0;  //0.1
 
-//float kp_M2 = 1;   //60
-//float ki_M2 = 0;  //600
-//float kd_M2 = 0;  //0.1
-
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
-  pinMode(RST_M1, OUTPUT);
-  digitalWrite(RST_M1, LOW);   //Reset the internal counter
-  delay(10);
-  digitalWrite(RST_M1, HIGH);  //Stay high/off for the rest of the run
+  //Initialize interrupt timer
+  cli();                // Disable interrupts
+  TCCR1A = 0;           // Init Timer1
+  TCCR1B = 0;           // Init Timer1
+  TCCR1B |= B00000011;  // Prescalar = 64
+  OCR1A = 60;           // Timer CompareA Register
+  TIMSK1 |= B00000010;  // Enable Timer COMPA Interrupt
+  sei();                // Enable interrupts
 
-  pinMode(OE_M1, OUTPUT);
-  pinMode(SEL1_M1, OUTPUT);
-  pinMode(SEL2_M1, OUTPUT);
+  pinMode(ENCA,INPUT);
+  pinMode(ENCB,INPUT);
+  attachInterrupt(digitalPinToInterrupt(ENCA),readEncoder,RISING);
+  
+  pinMode(PWM_M1,OUTPUT);
+  pinMode(CW_M1,OUTPUT);
+  pinMode(CCW_M1,OUTPUT);
+  
+  Serial.println(target_M1);
+}
 
-  pinMode(D0_M1, INPUT);
-  pinMode(D1_M1, INPUT);
-  pinMode(D2_M1, INPUT);
-  pinMode(D3_M1, INPUT);
-  pinMode(D4_M1, INPUT);
-  pinMode(D5_M1, INPUT);
-  pinMode(D6_M1, INPUT);
-  pinMode(D7_M1, INPUT);
+ISR(TIMER1_COMPA_vect){
+  // Advance The COMPA Register, handle The 200us/5000hz Timer Interrupt
+  OCR1A += 60;
 
-  pinMode(PWM_M1, OUTPUT);
-  pinMode(CW_M1, OUTPUT);
-  pinMode(CCW_M1, OUTPUT);
+  //int start = micros();
 
-  attachInterrupt(digitalPinToInterrupt(TIMER), ISR, RISING);
+  //convert encoder pulses to degrees
+  int pos = encoder_M1/136;
+  
+  //PID control signal calculation
+  u = pidController(target_M1, pos, kp_M1, ki_M1, kd_M1);
 
+  //Convert control signal into associated PWM value and direction, and send to motor
+  moveMotor(CW_M1, CCW_M1, PWM_M1, u);
+  
+  Serial.print("pos:");
+  Serial.println(pos);
+
+  //int end = micros();
+  //ISR_time = end - start;
 }
 
 void loop() {
-
-getAngle();
-delay(10);
-
 }
 
-void getAngle(){
-  
-  digitalWrite(OE_M1, HIGH); // Set OE to HIGH (disable)
-  delay(10);                 // Need a better way
-  
-  digitalWrite(SEL1_M1, LOW);
-  digitalWrite(SEL2_M1, HIGH); // SEL1 = 0 and SEL2 = 1
-  
-  digitalWrite(OE_M1, LOW); // Set OE to LOW (enable)
-  byte B1_result = getB1();
-  
-  digitalWrite(SEL1_M1, HIGH);
-  digitalWrite(SEL2_M1, HIGH); // SEL1 = 1 and SEL2 = 1
-  byte B2_result = getB2();
-  
-  digitalWrite(SEL1_M1, LOW);
-  digitalWrite(SEL2_M1, LOW); // SEL1 = 0 and SEL2 = 0
-  byte B3_result = getB3();
-  
-  digitalWrite(SEL1_M1, HIGH);
-  digitalWrite(SEL2_M1, LOW); // SEL1 = 1 and SEL2 = 0
-  byte B4_result = getB4();
+float pidController(int target, int pos, float kp, float ki, float kd){
+  long currentTime = micros();
+  float deltaT = ((float)(currentTime-previousTime))/1.0e6; //time difference
 
-  digitalWrite(OE_M1, HIGH); // Set OE to HIGH (disable)
-  delay(10);
-  
-  countData = mergeBytes(B1_result, B2_result, B3_result, B4_result);\
+  //compute error, derivative and integral
+  int e = pos - target;
+  float eDerivative = (e-ePrevious)/(deltaT);
+  eIntegral = eIntegral + e*deltaT;
 
-  //12pulses/rev * 12/3 = 136pulses/rev
-  angle_M1 = countData/136;
-  
-  Serial.print("Counter: ");
-  Serial.print(countData);
-  Serial.print(" | ");
-  Serial.print("Angle M1: ");
-  Serial.println(angle_M1);
+  float u = (kp*e) + (kd*eDerivative) + (ki*eIntegral); //control signal
+
+  //update variables for next iteration
+  ePrevious = e;
+  previousTime = currentTime;
+
+  return u;
 }
 
-byte getB1(){
-  //Get stable data for MSB of countData
-  byte B1_old = 0;
-  byte B1_new = 0;
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B1_old, i-12, digitalRead(i));
+void moveMotor(int in1, int in2, int pwm_pin, float u){
+  float speed = fabs(u);  //motor power                              
+  if(speed > 255){
+    speed = 255;
   }
 
-  for (int i=12; i<=19; i++){
-    bitWrite(B1_new, i-12, digitalRead(i));  //repeat for stable data
+  int direction = 1;  //motor direction     
+  if(u<0){            //u<0
+    direction = -1;
   }
-  
-  if (B1_new = B1_old){
-    byte B1_result = B1_new;
-    return B1_result;
+
+  analogWrite(pwm_pin, speed); //implement speed control using driver     
+
+  if(direction == 1){
+    digitalWrite(in1, HIGH);
+    digitalWrite(in2, LOW);
+  }
+  else if(direction == -1){
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, HIGH);
+  }
+  else{
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, LOW);
   }
 }
 
-byte getB2(){
-  //Get stable data for MSB of countData
-  byte B2_old = 0;
-  byte B2_new = 0;
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B2_old, i-12, digitalRead(i));
+void readEncoder(){
+  if(digitalRead(ENCB) > 0){
+    encoder_M1++; //counter clockwise rotation
   }
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B2_new, i-12, digitalRead(i));  //repeat for stable data
+  else{
+    encoder_M1--; //clockwise rotation
   }
-  
-  if (B2_new = B2_old){
-    byte B2_result = B2_new;
-    return B2_result;
-  }
-}
-
-byte getB3(){
-  //Get stable data for MSB of countData
-  byte B3_old = 0;
-  byte B3_new = 0;
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B3_old, i-12, digitalRead(i));
-  }
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B3_new, i-12, digitalRead(i));  //repeat for stable data
-  }
-  
-  if (B3_new = B3_old){
-    byte B3_result = B3_new;
-    return B3_result;
-  }
-}
-
-byte getB4(){
-  //Get stable data for MSB of countData
-  byte B4_old = 0;
-  byte B4_new = 0;
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B4_old, i-12, digitalRead(i));
-  }
-
-  for (int i=12; i<=19; i++){
-    bitWrite(B4_new, i-12, digitalRead(i));  //repeat for stable data
-  }  
-
-  if (B4_new == B4_old){
-    byte B4_result = B4_new;
-    return B4_result;
-  }
-}
-
-long mergeBytes(byte b1, byte b2, byte b3, byte b4){
-/*Merges the 4 bytes returning one 32-bit variable called countData*/
-
-  return (((long)b1 << 24) | ((long)b2 << 16) | ((long)b3 << 8) | ((long)b4));
 }
