@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=Encoder A B Pin=J2-1
+Removed Pin From Net: NetName=Encoder A A Pin=J2-2
+Removed Pin From Net: NetName=+5 Pin=J2-3
+Removed Pin From Net: NetName=GND Pin=J2-4
+Removed Pin From Net: NetName=MotorA- Pin=J2-5
+Removed Pin From Net: NetName=MotorA+ Pin=J2-6
+Removed Pin From Net: NetName=Encoder B B Pin=J2-7
+Removed Pin From Net: NetName=Encoder B A Pin=J2-8
+Removed Pin From Net: NetName=+5 Pin=J2-9
+Removed Pin From Net: NetName=GND Pin=J2-10
+Removed Pin From Net: NetName=MotorB+ Pin=J2-11
+Removed Pin From Net: NetName=MotorB- Pin=J2-12
+Removed Member From Class: ClassName=IO Member=J2

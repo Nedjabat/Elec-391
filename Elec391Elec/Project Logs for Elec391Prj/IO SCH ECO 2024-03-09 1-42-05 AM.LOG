@@ -1,0 +1,10 @@
+Update Managed Component C1 From CMP-001-00081-4[Capacitor 22µF +/-40% 16V 0805] To CMP-001-00081-4[Capacitor 22µF +/-40% 16V 0805] in IO.SchDoc
+Update Managed Component C2 From CMP-001-00015-6[Capacitor 10 uF +/- 10% 16 V 0805] To CMP-001-00015-6[Capacitor 10 uF +/- 10% 16 V 0805] in IO.SchDoc
+Update Managed Component DS1 From CMP-007-00011-2[HSMA-C190] To CMP-007-00011-2[HSMA-C190] in IO.SchDoc
+Update Managed Component DS2 From CMP-007-00013-2[HSMG-C190] To CMP-007-00013-2[HSMG-C190] in IO.SchDoc
+Replace Part J1 691137710002 in C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\IO.SchDoc with 691137710002 from NeededParts.IntLib
+Replace Part J2 1-640456-2 in C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\IO.SchDoc with 1-640456-2 from NeededParts.IntLib
+Replace Part J3 C-Pwr in C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\IO.SchDoc with C-Pwr from PartsDatabaseV16.1.IntLib
+Replace Part R1 RT0603BRE07250RL in C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\IO.SchDoc with RT0603BRE07250RL from NeededParts.IntLib
+Replace Part R2 RC0603FR-13620RL in C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\IO.SchDoc with RC0603FR-13620RL from NeededParts.IntLib
+Update Managed Component U1 From CMP-019-00021-4[LM1117IMP-5.0-NOPB] To CMP-019-00021-4[LM1117IMP-5.0-NOPB] in IO.SchDoc
