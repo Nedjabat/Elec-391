@@ -4,19 +4,25 @@
 #define CW_M1 6
 #define CCW_M1 7
 
+//encoder counts
 volatile long encoder_M1 = 0;
+volatile int pos = 0;
 
+//variables for testing purposes
 int target_M1 = 120;
+//volatile int ISR_time = 0;
 
 //PID
 volatile float u = 0;
 volatile long previousTime = 0;
 volatile float ePrevious = 0;
 volatile float eIntegral = 0;
+volatile float eDerivativeBuffer[10] = {0.0};
+const int eDerivativeSamples = 10;
 
-float kp_M1 = 2;   //60
-float ki_M1 = 0.02;  //600
-float kd_M1 = 0;  //0.1
+float kp_M1 = 10;      //60
+float ki_M1 = 0.01;   //600
+float kd_M1 = 0.1;      //0.1
 
 void setup() {
   Serial.begin(115200);
@@ -26,7 +32,7 @@ void setup() {
   TCCR1A = 0;           // Init Timer1
   TCCR1B = 0;           // Init Timer1
   TCCR1B |= B00000011;  // Prescalar = 64
-  OCR1A = 60;           // Timer CompareA Register
+  OCR1A = 225;           // Timer CompareA Register
   TIMSK1 |= B00000010;  // Enable Timer COMPA Interrupt
   sei();                // Enable interrupts
 
@@ -37,18 +43,24 @@ void setup() {
   pinMode(PWM_M1,OUTPUT);
   pinMode(CW_M1,OUTPUT);
   pinMode(CCW_M1,OUTPUT);
-  
-  Serial.println(target_M1);
+}
+
+void loop() {
+  Serial.print("target_M1:");
+  Serial.print(target_M1);
+  Serial.print(" | ");
+  Serial.print("Pos_M1:");
+  Serial.println(pos);
 }
 
 ISR(TIMER1_COMPA_vect){
   // Advance The COMPA Register, handle The 200us/5000hz Timer Interrupt
-  OCR1A += 60;
+  OCR1A += 225;
 
   //int start = micros();
 
   //convert encoder pulses to degrees
-  int pos = encoder_M1/136;
+  pos = encoder_M1/136;
   
   //PID control signal calculation
   u = pidController(target_M1, pos, kp_M1, ki_M1, kd_M1);
@@ -56,26 +68,42 @@ ISR(TIMER1_COMPA_vect){
   //Convert control signal into associated PWM value and direction, and send to motor
   moveMotor(CW_M1, CCW_M1, PWM_M1, u);
   
-  Serial.print("pos:");
-  Serial.println(pos);
-
-  //int end = micros();
-  //ISR_time = end - start;
-}
-
-void loop() {
+  //ISR_time = micros() - start;
 }
 
 float pidController(int target, int pos, float kp, float ki, float kd){
   long currentTime = micros();
   float deltaT = ((float)(currentTime-previousTime))/1.0e6; //time difference
 
-  //compute error, derivative and integral
+  //compute error for proportional control
   int e = pos - target;
-  float eDerivative = (e-ePrevious)/(deltaT);
+
+  //compute integral error
   eIntegral = eIntegral + e*deltaT;
 
-  float u = (kp*e) + (kd*eDerivative) + (ki*eIntegral); //control signal
+  //compute derivative term using weighted sum filters
+  //shift the values in eDerivativeBuffer down and update the latest value to the last index
+  for (int i = 0; i<eDerivativeSamples-1; i++){
+    eDerivativeBuffer[i] = eDerivativeBuffer[i+1];
+  }
+  eDerivativeBuffer[eDerivativeSamples-1] = (e-ePrevious)/(deltaT);
+  
+  //apply weights to eDerivative terms
+  float eDerivative = 0.0;
+  float weightSum = 0.0;
+  float weight = 1.0;
+  
+  for (int i=0; i<eDerivativeSamples; i++){
+    eDerivative += eDerivativeBuffer[i]*weight;
+    weightSum += weight;
+    weight *= 1.2;
+  }
+
+  //normalize eDerivative
+  eDerivative /= weightSum;
+
+  //output PID control signal
+  float u = (kp*e) + (ki*eIntegral) + (kd*eDerivative);
 
   //update variables for next iteration
   ePrevious = e;
