@@ -1,0 +1,14 @@
+Removed Member From Class: ClassName=Microcontroller Member=R?
+Change Component Designator: OldDesignator=DS1 NewDesignator=DS2
+Change Component Designator: OldDesignator=DS2 NewDesignator=DS1
+Change Component Designator: OldDesignator=R? NewDesignator=R3
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Net Name : Old Net Name=NetDS1_2 New Net Name=NetDS2_2
+Change Net Name : Old Net Name=NetDS2_2 New Net Name=NetDS1_2
+Added Member To Class: ClassName=Microcontroller Member=Component R4 Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R5 Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R6 Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R7 Resistor 1k +/-1% 0603 100 mW

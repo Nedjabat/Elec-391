@@ -1,0 +1,90 @@
+Removed Pin From Net: NetName=GND Pin=C1-1
+Removed Pin From Net: NetName=GND Pin=C2-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Removed Pin From Net: NetName=GND Pin=J2-4
+Removed Pin From Net: NetName=GND Pin=J2-10
+Removed Pin From Net: NetName=GND Pin=J3-2
+Removed Pin From Net: NetName=GND Pin=J3-3
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Pin From Net: NetName=GND Pin=R2-2
+Removed Pin From Net: NetName=GND Pin=U1-1
+Added Component: Designator=R?(RESC1608X55X25ML10T15)
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC1608X55X25ML10T15)
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC1608X55X25ML10T15)
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC2512(6432)_L)
+Add component (AddParameter): Name = "Case-EIA"; Value = "2512"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case-Metric"; Value = "6432"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.00 Ohm"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC1608X55X25ML10T15)
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Encoder A A Pin=R?-1
+Added Pin To Net: NetName=Encoder A B Pin=R?-1
+Added Pin To Net: NetName=Encoder B A Pin=R?-1
+Added Pin To Net: NetName=Encoder B B Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=+5 Pin=R?-2
+Added Pin To Net: NetName=+5 Pin=R?-2
+Added Pin To Net: NetName=+5 Pin=R?-2
+Added Pin To Net: NetName=+5 Pin=R?-2
+Change Net Name : Old Net Name=GND New Net Name=PGND
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J2-4
+Added Pin To Net: NetName=GND Pin=J2-10
+Added Pin To Net: NetName=GND Pin=J3-2
+Added Pin To Net: NetName=GND Pin=J3-3
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-29
+Added Net: Name=GND
+Added Member To Class: ClassName=IO Member=Component R? Jumper 2512(6432)
+Added Member To Class: ClassName=Microcontroller Member=Component R? Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R? Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R? Resistor 1k +/-1% 0603 100 mW
+Added Member To Class: ClassName=Microcontroller Member=Component R? Resistor 1k +/-1% 0603 100 mW

@@ -1,0 +1,53 @@
+Removed Pin From Net: NetName=NetU3_5 Pin=U3-5
+Removed Pin From Net: NetName=GND Pin=U?-2
+Removed Pin From Net: NetName=NetU3_5 Pin=U?-4
+Removed Pin From Net: NetName=GND Pin=U?-29
+Removed Pin From Net: NetName=+5 Pin=U?-30
+Removed Member From Class: ClassName=Microcontroller Member=U?
+Change Component Footprint: Designator=U2 Old Footprint=MODULE_ESP32_DEVKIT_V1 New Footprint=MODULE_ESP32_DEVKIT_V1
+Change Component Designator: OldDesignator=5V NewDesignator=2
+Change Component Designator: OldDesignator=12V NewDesignator=1
+Change Component Designator: OldDesignator=U3 NewDesignator=U4
+Change Component Designator: OldDesignator=U4 NewDesignator=U5
+Change Managed Component Library Link : Designator=U2 Old VaultGUID=45D65668-4753-416C-A90D-62F74200805E New VaultGUID= Old ItemGUID=F4171157-F6FD-4B6E-A1A3-9C69FF30DFDC New ItemGUID= Old RevisionGUID=56cb29e5-da2f-40ef-b574-3ae35f732a57 New RevisionGUID=
+Change component parameters: Designator = "U2" ("U2"); Footprint = "MODULE_ESP32_DEVKIT_V1"; UniqueID = "\IDSZWGYS" ("\IDSZWGYS")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Do it"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "ESP32-DEVKIT-V1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U3(MODULE_ESP32_DEVKIT_V1)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Do it"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-DEVKIT-V1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U3-2
+Added Pin To Net: NetName=NetU3_5 Pin=U3-5
+Added Pin To Net: NetName=GND Pin=U3-29
+Added Pin To Net: NetName=+5 Pin=U3-30
+Added Pin To Net: NetName=NetU3_5 Pin=U4-7
+Change Net Name : Old Net Name=Net5V_2 New Net Name=Net2_2
+Change Net Name : Old Net Name=Net12V_2 New Net Name=Net1_2
+Added Pin To Net: NetName=NetU3_4 Pin=U3-4
+Added Pin To Net: NetName=NetU3_4 Pin=U4-5
+Added Net: Name=NetU3_4
+Added Pin To Net: NetName=NetU3_8 Pin=U3-8
+Added Pin To Net: NetName=NetU3_8 Pin=U4-6
+Added Net: Name=NetU3_8
+Added Pin To Net: NetName=NetU3_26 Pin=U3-26
+Added Pin To Net: NetName=NetU3_26 Pin=U5-6
+Added Net: Name=NetU3_26
+Added Pin To Net: NetName=NetU3_27 Pin=U3-27
+Added Pin To Net: NetName=NetU3_27 Pin=U5-5
+Added Net: Name=NetU3_27
+Added Pin To Net: NetName=NetU3_28 Pin=U3-28
+Added Pin To Net: NetName=NetU3_28 Pin=U5-7
+Added Net: Name=NetU3_28
+Added Member To Class: ClassName=Microcontroller Member=Component U3 ESP32-DEVKIT-V1

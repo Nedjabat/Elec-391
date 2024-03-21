@@ -1,0 +1,33 @@
+Added Component: Designator=U?(MODULE_ESP32_DEVKIT_V1)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "ESP32-DEVKIT-V1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Do it"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-DEVKIT-V1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "ESP32-DEVKIT-V1.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=U?-30
+Added Pin To Net: NetName=NetU3_5 Pin=U3-5
+Added Pin To Net: NetName=NetU3_5 Pin=U?-4
+Added Net: Name=NetU3_5
+Added Pin To Net: NetName=NetU3_6 Pin=U3-6
+Added Pin To Net: NetName=NetU3_6 Pin=U?-8
+Added Net: Name=NetU3_6
+Added Pin To Net: NetName=NetU3_7 Pin=U3-7
+Added Pin To Net: NetName=NetU3_7 Pin=U?-5
+Added Net: Name=NetU3_7
+Added Pin To Net: NetName=NetU4_5 Pin=U4-5
+Added Pin To Net: NetName=NetU4_5 Pin=U?-27
+Added Net: Name=NetU4_5
+Added Pin To Net: NetName=NetU4_6 Pin=U4-6
+Added Pin To Net: NetName=NetU4_6 Pin=U?-26
+Added Net: Name=NetU4_6
+Added Pin To Net: NetName=NetU4_7 Pin=U4-7
+Added Pin To Net: NetName=NetU4_7 Pin=U?-28
+Added Net: Name=NetU4_7
+Added Member To Class: ClassName=Microcontroller Member=Component U? ESP32-DEVKIT-V1
