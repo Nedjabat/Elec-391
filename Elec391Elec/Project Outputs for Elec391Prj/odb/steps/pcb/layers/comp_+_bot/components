@@ -1,0 +1,18 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+
+# CMP 0
+CMP 13 83.18500508 85.725 90 N R3 Jumper_2512(6432) ;0=1,1=0.7500
+PRP Case-EIA '2512'
+PRP Case-Metric '6432'
+PRP Power 'None'
+PRP Technology 'SMT'
+PRP Tolerance 'None'
+PRP Value '0.00 Ohm'
+TOP 0 83.18500508 88.62499928 180 N 6 2 1
+TOP 1 83.18500508 82.82499818 180 N 8 3 2
+#

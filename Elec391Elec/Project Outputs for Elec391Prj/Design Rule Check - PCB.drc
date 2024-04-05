@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Ryann\Documents\GitHub\Elec-391\Elec391Elec\PCB.PcbDoc
-Date     : 2024-03-21
-Time     : 4:05:50 PM
+Date     : 2024-04-02
+Time     : 5:35:03 PM
 
 Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
 Rule Violations :0
@@ -16,7 +16,23 @@ Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-Rule Violations :0
+   Violation between Short-Circuit Constraint: Between Pad U2-(1175.787mil,2291.535mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(1175.787mil,2291.535mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(1175.787mil,3256.496mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(1175.787mil,3256.496mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(3024.213mil,2291.535mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(3024.213mil,2291.535mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(3024.213mil,3256.496mil) on Multi-Layer And Polygon Region (0 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U2-(3024.213mil,3256.496mil) on Multi-Layer And Polygon Region (0 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(1176.575mil,1040.039mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(1176.575mil,1040.039mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(1176.575mil,2005mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(1176.575mil,2005mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(3025mil,1040.039mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(3025mil,1040.039mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(3025mil,2005mil) on Multi-Layer And Polygon Region (33 hole(s)) Bottom Layer Location : [X = 0mil][Y = 0mil]
+   Violation between Short-Circuit Constraint: Between Pad U3-(3025mil,2005mil) on Multi-Layer And Polygon Region (55 hole(s)) Top Layer Location : [X = 0mil][Y = 0mil]
+Rule Violations :16
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Via (3300mil,1025mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
@@ -31,10 +47,13 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=15mil) (Max=25mil) (Preferred=15mil) (All)
 Rule Violations :0
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=50mil) (Air Gap=10mil) (Entries=4) (InNet('GND'))
+Processing Rule : Width Constraint (Min=10mil) (Max=100mil) (Preferred=10mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=50mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=50mil) (Air Gap=10mil) (Entries=4) (InNet('GND'))
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=7mil) (All)
@@ -47,9 +66,11 @@ Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (1.205mil < 10mil) Between Pad 1-1(1499.997mil,3945.476mil) on Top Layer And Via (1479.467mil,3895.533mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.205mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 10mil) Between Pad C3-1(3200.394mil,3900mil) on Top Layer And Pad C3-2(3249.606mil,3900mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
    Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 10mil) Between Pad C4-1(3200mil,4000mil) on Top Layer And Pad C4-2(3249.213mil,4000mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
-Rule Violations :2
+   Violation between Minimum Solder Mask Sliver Constraint: (8.142mil < 10mil) Between Pad D3-1(2250mil,4033.465mil) on Top Layer And Via (2300mil,4025mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [8.142mil]
+Rule Violations :4
 
 Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (5.704mil < 10mil) Between Pad C2-1(1305mil,3569.567mil) on Top Layer And Track (1283.346mil,3593.189mil)(1283.346mil,3616.811mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [5.704mil]
@@ -76,6 +97,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 
-Violations Detected : 18
+Violations Detected : 36
 Waived Violations : 0
 Time Elapsed        : 00:00:01

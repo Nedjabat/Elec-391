@@ -1,0 +1,590 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+
+# CMP 0
+CMP 4 76.708 100.33 180 N C1 Capacitor_10_F_+/-20%_10V_0603 ;0=1,1=1.0000
+PRP Capacitor_Type ''
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SMT'
+PRP Pins '2'
+PRP Ripple_Current ''
+PRP Ripple_Current_(AC) ''
+PRP RoHS_Compliant ''
+PRP Tolerance '10%'
+PRP Value '10µF'
+PRP Voltage_Rating '10V'
+TOP 0 77.40800114 100.32999746 90 N 6 20 1
+TOP 1 76.00799886 100.32999746 90 N 29 20 2
+#
+# CMP 1
+CMP 10 53.35999996 38.69699906 270 N U3 ESP32-DEVKIT-V1 ;0=2,1=6.8000
+PRP Availability 'Not in stock'
+PRP Check_prices 'https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=eda'
+PRP MF 'Do it'
+PRP MP 'ESP32-DEVKIT-V1'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=snap'
+PRP Value ''
+TOP 0 37.84499924 25.99699906 270 N 0 10 1
+TOP 1 40.38499924 25.99699906 270 N 8 5 2
+TOP 2 42.92499924 25.99699906 270 N 0 11 3
+TOP 3 45.46499924 25.99699906 270 N 5 1 4
+TOP 4 48.00499924 25.99699906 270 N 7 1 5
+TOP 5 50.54499924 25.99699906 270 N 0 12 6
+TOP 6 53.08499924 25.99699906 270 N 0 13 7
+TOP 7 55.62499924 25.99699906 270 N 4 1 8
+TOP 8 58.16499924 25.99699906 270 N 0 14 9
+TOP 9 60.70499924 25.99699906 270 N 0 15 10
+TOP 10 63.24499924 25.99699906 270 N 0 16 11
+TOP 11 65.78499924 25.99699906 270 N 0 17 12
+TOP 12 68.32499924 25.99699906 270 N 0 18 13
+TOP 13 70.86499924 25.99699906 270 N 0 19 14
+TOP 14 73.40499924 25.99699906 270 N 0 20 15
+TOP 15 73.40499924 51.39699906 270 N 0 30 16
+TOP 16 70.86499924 51.39699906 270 N 0 29 17
+TOP 17 68.32499924 51.39699906 270 N 0 28 18
+TOP 18 65.78499924 51.39699906 270 N 0 27 19
+TOP 19 63.24499924 51.39699906 270 N 0 26 20
+TOP 20 60.70499924 51.39699906 270 N 0 25 21
+TOP 21 58.16499924 51.39699906 270 N 0 24 22
+TOP 22 55.62499924 51.39699906 270 N 0 23 23
+TOP 23 53.08499924 51.39699906 270 N 0 22 24
+TOP 24 50.54499924 51.39699906 270 N 0 21 25
+TOP 25 48.00499924 51.39699906 270 N 3 1 26
+TOP 26 45.46499924 51.39699906 270 N 2 1 27
+TOP 27 42.92499924 51.39699906 270 N 1 1 28
+TOP 28 40.38499924 51.39699906 270 N 8 6 29
+TOP 29 37.84499924 51.39699906 270 N 30 22 30
+TOP 30 29.88499992 26.41699822 270 N 0 34 empty-1
+TOP 31 29.88499992 50.927 270 N 0 33 empty-2
+TOP 32 76.835 50.927 270 N 0 32 empty-3
+TOP 33 76.835 26.41699822 270 N 0 31 empty-4
+#
+# CMP 2
+CMP 12 49.6690015 54.61 0 N R4 Resistor_1k_+/-1%_0603_100_mW ;0=1,1=0.5500
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '155°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Power '100mW'
+PRP RoHS_Compliant 'True'
+PRP Tolerance '1%'
+PRP Value '1k'
+PRP Voltage_Rating '50V'
+TOP 0 48.91900046 54.61 270 N 22 2 1
+TOP 1 50.419 54.61 270 N 30 28 2
+#
+# CMP 3
+CMP 12 66.15500104 54.61 0 N R7 Resistor_1k_+/-1%_0603_100_mW ;0=1,1=0.5500
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '155°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Power '100mW'
+PRP RoHS_Compliant 'True'
+PRP Tolerance '1%'
+PRP Value '1k'
+PRP Voltage_Rating '50V'
+TOP 0 65.405 54.61 270 N 19 2 1
+TOP 1 66.90499954 54.61 270 N 30 31 2
+#
+# CMP 4
+CMP 12 56.515 54.61 180 N R5 Resistor_1k_+/-1%_0603_100_mW ;0=1,1=0.5500
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '155°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Power '100mW'
+PRP RoHS_Compliant 'True'
+PRP Tolerance '1%'
+PRP Value '1k'
+PRP Voltage_Rating '50V'
+TOP 0 57.26500104 54.61 90 N 21 2 1
+TOP 1 55.7650015 54.61 90 N 30 29 2
+#
+# CMP 5
+CMP 12 60.96 54.61 0 N R6 Resistor_1k_+/-1%_0603_100_mW ;0=1,1=0.5500
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '155°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Power '100mW'
+PRP RoHS_Compliant 'True'
+PRP Tolerance '1%'
+PRP Value '1k'
+PRP Voltage_Rating '50V'
+TOP 0 60.20999896 54.61 270 N 20 2 1
+TOP 1 61.7099985 54.61 270 N 30 30 2
+#
+# CMP 6
+CMP 15 65.80455978 114.44099032 0 N J2 1-640456-2 ;0=2,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF ''
+PRP MP '1-640456-2'
+PRP Package 'None'
+PRP Price 'None'
+PRP Value ''
+TOP 0 65.80455978 114.44099032 0 N 21 1 1
+TOP 1 63.26455978 114.44099032 0 N 22 1 2
+TOP 2 60.72455978 114.44099032 0 N 30 24 3
+TOP 3 58.18455978 114.44099032 0 N 6 11 4
+TOP 4 55.64455978 114.44099032 0 N 27 1 5
+TOP 5 53.10455978 114.44099032 0 N 28 1 6
+TOP 6 50.56455978 114.44099032 0 N 19 1 7
+TOP 7 48.02455978 114.44099032 0 N 20 1 8
+TOP 8 45.48455978 114.44099032 0 N 30 25 9
+TOP 9 42.94455978 114.44099032 0 N 6 12 10
+TOP 10 40.40455978 114.44099032 0 N 26 1 11
+TOP 11 37.86455978 114.44099032 0 N 25 1 12
+#
+# CMP 7
+CMP 2 82.55 68.58 90 N J4 67997-410HLF ;0=2,1=8.6400
+PRP Check_prices 'https://www.snapeda.com/parts/67997-410HLF/Amphenol+FCI/view-part/?ref=eda'
+PRP Digi-Key_Part_Number '609-3243-ND'
+PRP MF 'Amphenol ICC'
+PRP MP '67997-410HLF'
+PRP Package 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/67997-410HLF/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/67997-410HLF/Amphenol+FCI/view-part/?ref=snap'
+PRP Value ''
+TOP 0 81.28 73.66 90 N 18 0 01
+TOP 1 83.82 73.66 90 N 17 0 02
+TOP 2 81.28 71.12 90 N 16 0 03
+TOP 3 83.82 71.12 90 N 15 0 04
+TOP 4 81.28 68.58 90 N 14 0 05
+TOP 5 83.82 68.58 90 N 13 0 06
+TOP 6 81.28 66.04 90 N 12 0 07
+TOP 7 83.82 66.04 90 N 11 0 08
+TOP 8 81.28 63.5 90 N 10 0 09
+TOP 9 83.82 63.5 90 N 9 0 10
+#
+# CMP 8
+CMP 7 30.734 106.18600048 180 N U1 LM1117IMP-5.0-NOPB ;0=1,1=1.8000
+PRP Case/Package 'SOT-223'
+PRP Datasheet_URL 'http://www.ti.com/lit/ds/symlink/lm1117.pdf'
+PRP Datasheet_Version 'SNOS412N, 01/2016'
+PRP Dropout_Voltage '1.2V'
+PRP Frequency ''
+PRP Manufacturer 'Texas Instruments'
+PRP Manufacturer_URL 'http://www.ti.com/'
+PRP Max_Input_Voltage '15V'
+PRP Max_Operating_Temperature '125°C'
+PRP Max_Ouput_Current '800mA'
+PRP Max_Power_Dissipation ''
+PRP Max_Supply_Voltage ''
+PRP Min_Input_Voltage '2.6V'
+PRP Min_Operating_Temperature '-40°C'
+PRP Min_Supply_Voltage ''
+PRP Mounting_Technology 'SM'
+PRP Nominal_Output_Voltage '5V'
+PRP Nominal_Supply_Current ''
+PRP Output_Current '800mA'
+PRP Output_Voltage '5V'
+PRP Outputs '1'
+PRP Package_Description '4-Pin Small Outline Transistor, Body 6.5 x 3.5 mm, Pitch 2.3 mm'
+PRP Package_Reference 'DCY0004A'
+PRP Packaging 'TapeandReel'
+PRP Pins '4'
+PRP RoHS_Compliant 'True'
+TOP 0 33.909 103.886 90 N 8 11 1
+TOP 1 33.909 106.18600048 90 N 30 32 2
+TOP 2 33.909 108.48600096 90 N 29 19 3
+TOP 3 27.559 106.18600048 90 N 30 33 4
+#
+# CMP 9
+CMP 0 38.1 105.19499916 270 N R2 RC0603FR-13620RL ;0=1,1=0.0000
+PRP Availability 'Unavailable'
+PRP MF ''
+PRP MP 'RC0603FR-13620RL'
+PRP Package 'None'
+PRP Price 'None'
+PRP Value ''
+TOP 0 38.1 104.34499832 270 N 23 0 1
+TOP 1 38.1 106.045 270 N 6 13 2
+#
+# CMP 10
+CMP 1 26.67 91.47999992 90 N J1 691137710002 ;0=2,1=0.0000
+PRP Availability 'Warning'
+PRP Check_prices 'https://www.snapeda.com/parts/691137710002/W%C3%BCrth%20Elektronik/view-part/4793356/?ref=eda'
+PRP MF 'WÃ¼rth Elektronik'
+PRP MP '691137710002'
+PRP Package 'None'
+PRP Price 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/691137710002/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/691137710002/W%C3%BCrth%20Elektronik/view-part/4793356/?ref=snap'
+PRP Value ''
+TOP 0 26.67 93.98 90 N 30 20 1
+TOP 1 26.67 88.97999984 90 N 8 4 2
+#
+# CMP 11
+CMP 14 46.482 91.186 270 N U5 L298N ;0=2,1=21.0000
+PRP Automotive_Qualification_Standard '-'
+PRP Datasheet_URL 'https://datasheet.ciiva.com/15109/getdatasheetpartid-50682-15109332.pdf'
+PRP Datasheet_Version '01/2000'
+PRP Driver_Case_Style 'Multiwatt'
+PRP Manufacturer 'STMicroelectronics'
+PRP Manufacturer_URL 'http://www.st.com/'
+PRP Motor_Type 'FullBridge'
+PRP Mounting_Technology 'ThroughHole'
+PRP MSL '-'
+PRP No._of_Outputs '4Outputs'
+PRP No._of_Pins '15Pins'
+PRP Operating_Temperature_Max '130°C'
+PRP Operating_Temperature_Min '-25°C'
+PRP Output_Current '2A'
+PRP Output_Voltage '46V'
+PRP Package_Description '15-Pin Flange Mount, Body 5 x 19.6 mm, Pitch 1.27 mm'
+PRP Package_Reference 'FM-15'
+PRP Packaging 'Each'
+PRP PartNumber 'L298'
+PRP Product_Range '-'
+PRP Supply_Voltage_Max '7V'
+PRP Supply_Voltage_Min '4.5V'
+PRP SVHC 'NoSVHC(17-Dec-2015)'
+TOP 0 37.592 88.646 270 N 6 3 1
+TOP 1 38.862 93.726 270 N 26 0 2
+TOP 2 40.132 88.646 270 N 25 0 3
+TOP 3 41.402 93.726 270 N 29 9 4
+TOP 4 42.672 88.646 270 N 2 0 5
+TOP 5 43.942 93.726 270 N 3 0 6
+TOP 6 45.212 88.646 270 N 1 0 7
+TOP 7 46.482 93.726 270 N 6 4 8
+TOP 8 47.752 88.646 270 N 30 19 9
+TOP 9 49.022 93.726 270 N 0 0 10
+TOP 10 50.292 88.646 270 N 0 1 11
+TOP 11 51.562 93.726 270 N 0 2 12
+TOP 12 52.832 88.646 270 N 0 3 13
+TOP 13 54.102 93.726 270 N 0 4 14
+TOP 14 55.372 88.646 270 N 6 5 15
+#
+# CMP 12
+CMP 14 68.58 91.186 270 N U4 L298N ;0=2,1=21.0000
+PRP Automotive_Qualification_Standard '-'
+PRP Datasheet_URL 'https://datasheet.ciiva.com/15109/getdatasheetpartid-50682-15109332.pdf'
+PRP Datasheet_Version '01/2000'
+PRP Driver_Case_Style 'Multiwatt'
+PRP Manufacturer 'STMicroelectronics'
+PRP Manufacturer_URL 'http://www.st.com/'
+PRP Motor_Type 'FullBridge'
+PRP Mounting_Technology 'ThroughHole'
+PRP MSL '-'
+PRP No._of_Outputs '4Outputs'
+PRP No._of_Pins '15Pins'
+PRP Operating_Temperature_Max '130°C'
+PRP Operating_Temperature_Min '-25°C'
+PRP Output_Current '2A'
+PRP Output_Voltage '46V'
+PRP Package_Description '15-Pin Flange Mount, Body 5 x 19.6 mm, Pitch 1.27 mm'
+PRP Package_Reference 'FM-15'
+PRP Packaging 'Each'
+PRP PartNumber 'L298'
+PRP Product_Range '-'
+PRP Supply_Voltage_Max '7V'
+PRP Supply_Voltage_Min '4.5V'
+PRP SVHC 'NoSVHC(17-Dec-2015)'
+TOP 0 59.69 88.646 270 N 6 10 1
+TOP 1 60.96 93.726 270 N 28 0 2
+TOP 2 62.23 88.646 270 N 27 0 3
+TOP 3 63.5 93.726 270 N 29 11 4
+TOP 4 64.77 88.646 270 N 5 0 5
+TOP 5 66.04 93.726 270 N 4 0 6
+TOP 6 67.31 88.646 270 N 7 0 7
+TOP 7 68.58 93.726 270 N 6 9 8
+TOP 8 69.85 88.646 270 N 30 21 9
+TOP 9 71.12 93.726 270 N 0 9 10
+TOP 10 72.39 88.646 270 N 0 8 11
+TOP 11 73.66 93.726 270 N 0 7 12
+TOP 12 74.93 88.646 270 N 0 6 13
+TOP 13 76.2 93.726 270 N 0 5 14
+TOP 14 77.47 88.646 270 N 6 8 15
+#
+# CMP 13
+CMP 10 53.34 70.485 270 N U2 ESP32-DEVKIT-V1 ;0=2,1=6.8000
+PRP Availability 'Not in stock'
+PRP Check_prices 'https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=eda'
+PRP MF 'Do it'
+PRP MP 'ESP32-DEVKIT-V1'
+PRP Package 'None'
+PRP Price 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/ESP32-DEVKIT-V1/Do+it/view-part/?ref=snap'
+PRP Value ''
+TOP 0 37.82499928 57.785 270 N 18 1 1
+TOP 1 40.36499928 57.785 270 N 8 7 2
+TOP 2 42.90499928 57.785 270 N 22 0 3
+TOP 3 45.44499928 57.785 270 N 0 35 4
+TOP 4 47.98499928 57.785 270 N 0 36 5
+TOP 5 50.52499928 57.785 270 N 0 37 6
+TOP 6 53.06499928 57.785 270 N 0 38 7
+TOP 7 55.60499928 57.785 270 N 0 39 8
+TOP 8 58.14499928 57.785 270 N 21 0 9
+TOP 9 60.68499928 57.785 270 N 20 0 10
+TOP 10 63.22499928 57.785 270 N 19 0 11
+TOP 11 65.76499928 57.785 270 N 0 40 12
+TOP 12 68.30499928 57.785 270 N 0 41 13
+TOP 13 70.84499928 57.785 270 N 17 1 14
+TOP 14 73.38499928 57.785 270 N 16 1 15
+TOP 15 73.38499928 83.185 270 N 0 47 16
+TOP 16 70.84499928 83.185 270 N 0 46 17
+TOP 17 68.30499928 83.185 270 N 0 45 18
+TOP 18 65.76499928 83.185 270 N 15 1 19
+TOP 19 63.22499928 83.185 270 N 13 1 20
+TOP 20 60.68499928 83.185 270 N 9 1 21
+TOP 21 58.14499928 83.185 270 N 11 1 22
+TOP 22 55.60499928 83.185 270 N 14 1 23
+TOP 23 53.06499928 83.185 270 N 12 1 24
+TOP 24 50.52499928 83.185 270 N 10 1 25
+TOP 25 47.98499928 83.185 270 N 0 44 26
+TOP 26 45.44499928 83.185 270 N 0 43 27
+TOP 27 42.90499928 83.185 270 N 0 42 28
+TOP 28 40.36499928 83.185 270 N 8 8 29
+TOP 29 37.82499928 83.185 270 N 30 23 30
+TOP 30 29.86499996 58.20499916 270 N 0 51 empty-1
+TOP 31 29.86499996 82.71500094 270 N 0 50 empty-2
+TOP 32 76.81500004 82.71500094 270 N 0 49 empty-3
+TOP 33 76.81500004 58.20499916 270 N 0 48 empty-4
+#
+# CMP 14
+CMP 11 26.2200009 100.33 0 N R1 RT0603BRE07250RL ;0=1,1=0.0000
+PRP Availability 'In Stock'
+PRP Check_prices 'https://www.snapeda.com/parts/RT0603BRE07250RL/Yageo/view-part/?ref=eda'
+PRP MF 'Yageo'
+PRP MP 'RT0603BRE07250RL'
+PRP Package '1608 Yageo'
+PRP Price 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/RT0603BRE07250RL/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/RT0603BRE07250RL/Yageo/view-part/?ref=snap'
+PRP Value ''
+TOP 0 25.4 100.33 0 N 8 10 1
+TOP 1 27.0400018 100.33 0 N 24 1 2
+#
+# CMP 15
+CMP 9 72.5805 106.172 90 N J3 C-Pwr ;0=2,1=0.0000
+PRP ComponentLink1Description 'Manufacturer Link'
+PRP ComponentLink1URL 'http://domino.kycon.com/internet/Products.html'
+PRP ComponentLink2Description 'Datasheet (ELEC391)'
+PRP ComponentLink2URL 'http://www.cui.com/product/resource/pj-102a.pdf'
+PRP DatasheetDocument '09-May-2002'
+PRP Published '17-Dec-2003'
+PRP Publisher 'Altium Limited'
+TOP 0 74.93 103.124 90 N 29 10 1
+TOP 1 74.93 109.22 90 N 6 7 2
+TOP 2 70.231 106.172 90 N 6 6 3
+#
+# CMP 16
+CMP 3 38.1 100.965 270 N 1 HSMG-C190 ;0=1,1=0.9000
+PRP Case/Package '0603'
+PRP Colour 'Green'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version 'Mar-12'
+PRP Forward_Current '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Illumination_Colour 'Green'
+PRP Lens_Style 'Diffused'
+PRP Luminous_Intensity '15mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Max_Operating_Temperature '85°C'
+PRP Max_Power_Dissipation ''
+PRP Min_Operating_Temperature '-40°C'
+PRP Mounting_Technology 'SM'
+PRP Nominal_Vf '2.2V'
+PRP Nominal_Wave ''
+PRP Package_Description '2-Pin Surface Mount Device, Body 1.6 x 0.8 mm, Height 0.9 mm'
+PRP Package_Quantity '4000'
+PRP Package_Reference 'HSMX-C190'
+PRP Packaging 'TapeandReel'
+PRP Pins '2'
+PRP Power '52mW'
+PRP RoHS_Compliant 'True'
+PRP Viewing_Angle '170degrees'
+TOP 0 38.09991872 100.21508024 270 N 29 16 1
+TOP 1 38.09991872 101.71508232 90 N 23 1 2
+#
+# CMP 17
+CMP 3 29.72991768 100.32991872 180 N 2 HSMA-C190 ;0=1,1=0.9000
+PRP Case/Package '0603'
+PRP Colour 'Orange'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0112EN'
+PRP Datasheet_Version 'Sep-10'
+PRP Forward_Current '20mA'
+PRP Forward_Voltage '1.9V'
+PRP Illumination_Colour 'Orange'
+PRP Lens_Style 'Diffused'
+PRP Luminous_Intensity '90mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Max_Operating_Temperature '85°C'
+PRP Max_Power_Dissipation ''
+PRP Min_Operating_Temperature '-40°C'
+PRP Mounting_Technology 'SM'
+PRP Nominal_Vf '1.9V'
+PRP Nominal_Wave ''
+PRP Package_Description '2-Pin Surface Mount Device, Body 1.6 x 0.8 mm, Height 0.9 mm'
+PRP Package_Quantity '4000'
+PRP Package_Reference 'HSMX-C190'
+PRP Packaging 'TapeandReel'
+PRP Pins '2'
+PRP Power '60mW'
+PRP RoHS_Compliant 'True'
+PRP Viewing_Angle '170degrees'
+TOP 0 30.47983744 100.32983744 180 N 30 26 1
+TOP 1 28.97983536 100.32983744 0 N 24 0 2
+#
+# CMP 18
+CMP 8 43.815 103.505 270 N D8 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 43.815 102.45000084 270 N 6 15 1
+TOP 1 43.815 104.55999916 270 N 25 2 2
+#
+# CMP 19
+CMP 8 49.53 103.505 270 N D7 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 49.53 102.45000084 270 N 6 14 1
+TOP 1 49.53 104.55999916 270 N 26 2 2
+#
+# CMP 20
+CMP 8 43.815 107.95 270 N D6 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 43.815 106.89500084 270 N 25 3 1
+TOP 1 43.815 109.00499916 270 N 29 14 2
+#
+# CMP 21
+CMP 8 49.53 107.95 270 N D5 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 49.53 106.89500084 270 N 26 3 1
+TOP 1 49.53 109.00499916 270 N 29 15 2
+#
+# CMP 22
+CMP 8 65.405 103.72000084 270 N D4 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 65.405 102.66500168 270 N 6 17 1
+TOP 1 65.405 104.775 270 N 27 2 2
+#
+# CMP 23
+CMP 8 57.15 103.505 270 N D3 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 57.15 102.45000084 270 N 6 16 1
+TOP 1 57.15 104.55999916 270 N 28 2 2
+#
+# CMP 24
+CMP 8 65.405 107.95 270 N D2 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 65.405 106.89500084 270 N 27 3 1
+TOP 1 65.405 109.00499916 270 N 29 13 2
+#
+# CMP 25
+CMP 8 57.15 107.95 270 N D1 1N4148WS-7-F ;0=1,1=1.2000
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.diodes.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.diodes.com/datasheets/ds30097.pdf'
+PRP DatasheetVersion 'Rev. 25-2, 03/2016'
+PRP PackageDescription '2-Pin Small Outline Diode, Body 1.7 x 1.3 mm'
+PRP PackageReference 'SOD323-2'
+TOP 0 57.15 106.89500084 270 N 28 3 1
+TOP 1 57.15 109.00499916 270 N 29 12 2
+#
+# CMP 26
+CMP 6 81.90500002 101.6 0 N C4 Capacitor_100_nF_+/-10%_50_V_0603 ;0=1,1=0.9000
+PRP Capacitor_Type 'Ceramic'
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '125°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Ripple_Current ''
+PRP Ripple_Current_(AC) ''
+PRP RoHS_Compliant 'True'
+PRP Tolerance '10%'
+PRP Value '100nF'
+PRP Voltage_Rating '50V'
+TOP 0 81.28 101.6 270 N 6 19 1
+TOP 1 82.53000004 101.6 270 N 29 18 2
+#
+# CMP 27
+CMP 6 81.915 99.06 0 N C3 Capacitor_100_nF_+/-10%_50_V_0603 ;0=1,1=0.9000
+PRP Capacitor_Type 'Ceramic'
+PRP Case/Package '0603'
+PRP Max_Operating_Temperature '125°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SM'
+PRP Pins '2'
+PRP Ripple_Current ''
+PRP Ripple_Current_(AC) ''
+PRP RoHS_Compliant 'True'
+PRP Tolerance '10%'
+PRP Value '100nF'
+PRP Voltage_Rating '50V'
+TOP 0 81.28999998 99.06 270 N 6 18 1
+TOP 1 82.54000002 99.06 270 N 29 17 2
+#
+# CMP 28
+CMP 5 33.147 91.567 270 N C2 Capacitor_22_F_+/-40%_16V_0805 ;0=1,1=1.4500
+PRP Capacitor_Type ''
+PRP Case/Package '0805'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mounting_Technology 'SMT'
+PRP Pins '2'
+PRP Ripple_Current ''
+PRP Ripple_Current_(AC) ''
+PRP RoHS_Compliant ''
+PRP Tolerance '5%'
+PRP Value '22µF'
+PRP Voltage_Rating '16V'
+TOP 0 33.147 90.66699926 180 N 8 9 1
+TOP 1 33.147 92.45700076 180 N 30 27 2
+#
