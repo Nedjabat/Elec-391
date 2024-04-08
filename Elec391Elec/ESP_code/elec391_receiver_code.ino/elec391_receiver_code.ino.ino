@@ -25,19 +25,18 @@ typedef struct struct_message{
 
 struct_message encoderData;
 
-int target_M1 = 0.0;
-int target_M2 = 0.0;
+int target_M1 = 0;
+int target_M2 = 0;
 
 volatile int pos_M1 = 0;
 volatile int pos_M2 = 0;
 
-//volatile long prevTime = 0;
 volatile double ePrev_M1 = 0;
 volatile double ePrev_M2 = 0;
-volatile double integral_M1 = 0.0;
-volatile double integral_M2 = 0.0;
 volatile double integralPrev_M1 = 0.0;
 volatile double integralPrev_M2 = 0.0;
+volatile double derivativePrev_M1 = 0.0;
+volatile double derivativePrev_M2 = 0.0;
 double controlSignal_M1 = 0.0;
 double controlSignal_M2 = 0.0;
 
@@ -85,7 +84,6 @@ void setup() {
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
   timerAlarmWrite(Timer0_Cfg, 1100, true);
   timerAlarmEnable(Timer0_Cfg);
-  //1/8000 or 8/1000
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
@@ -101,21 +99,18 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 
 void pidController(int pos_M1, int pos_M2, volatile double *u_M1, volatile double *u_M2){
-  //sampling time of discrete controller
+  //sampling time of discrete controller and time constant of derivative filter
   double T = 0.0011;
+  double tau = 0.02; //0.001, 0.05
 
   //PID gain values
   double kp_M1 = 2.5;   //2.5
-  double ki_M1 = 0.4;   //0.2
-  double kd_M1 = 0.0;   //-0.1
+  double ki_M1 = 4.0;   //2.0
+  double kd_M1 = 1.0;   //0.5
 
   double kp_M2 = 2.5;   //2.5
-  double ki_M2 = 0.4;   //0.5
-  double kd_M2 = 0.0;   //-0.1
-
-  //Time difference
-  //long currentTime = micros();
-  //double deltaT = ((double)(currentTime-(prevTime)))/1.0e6;
+  double ki_M2 = 4.0;   //2.0
+  double kd_M2 = 1.0;   //0.5
 
   //Compute error for proportional control
   double e_M1 = (pos_M1 - target_M1);
@@ -125,20 +120,21 @@ void pidController(int pos_M1, int pos_M2, volatile double *u_M1, volatile doubl
   double proportional_M1 = e_M1*kp_M1;
   double proportional_M2 = e_M2*kp_M2;
 
-  //Compute integral term, reset integral term if motor position moves from above to below from target or vice versa, or if the target position = motor position
+  //Compute integral term
   double integral_M1 = (ki_M1*T*0.5)*(e_M1+ePrev_M1)+integralPrev_M1;
   double integral_M2 = (ki_M2*T*0.5)*(e_M2+ePrev_M2)+integralPrev_M2;
 
-  //Compute derivative term
-  double derivative_M1 = kd_M1*((e_M1-(ePrev_M1))/(T));
-  double derivative_M2 = kd_M2*((e_M2-(ePrev_M2))/(T));
+  //Compute derivative term with low-pass derivative filter
+  double derivative_M1 = (2.0*kd_M1*(e_M1-ePrev_M1)+(2.0*tau-T)*(derivativePrev_M1))/(2.0*tau+T);
+  double derivative_M2 = (2.0*kd_M2*(e_M2-ePrev_M2)+(2.0*tau-T)*(derivativePrev_M2))/(2.0*tau+T);
 
   //update variables for next iteration
-  //prevTime = currentTime;
   ePrev_M1 = e_M1;
   ePrev_M2 = e_M2;
   integralPrev_M1 = integral_M1;
   integralPrev_M2 = integral_M2;
+  derivativePrev_M1 = derivative_M1;
+  derivativePrev_M2 = derivative_M2;
 
   *u_M1 = (proportional_M1) + (integral_M1) + (derivative_M1);
   *u_M2 = (proportional_M2) + (integral_M2) + (derivative_M2);
@@ -181,7 +177,7 @@ void loop() {
       target_M1 = 0;
       target_M2 = 0;
 
-      if((pos_M1 >= -5 && pos_M1 <= 5) && (pos_M2 >= -5 && pos_M2 <= 5)){
+      if((pos_M1 >= -2 && pos_M1 <= 2) && (pos_M2 >= -2 && pos_M2 <= 2)){
         delay(1000);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
@@ -194,7 +190,7 @@ void loop() {
       target_M2 = 0;
 
       //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= 85 && pos_M1 <= 95) && (pos_M2 >= -5 && pos_M2 <= 5)){
+      if((pos_M1 >= 88 && pos_M1 <= 92) && (pos_M2 >= -2 && pos_M2 <= 2)){
         delay(1000);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
@@ -207,7 +203,7 @@ void loop() {
       target_M2 = 90;
 
       //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= 85 && pos_M1 <= 95) && (pos_M2 >= 85 && pos_M2 <= 95)){
+      if((pos_M1 >= 88 && pos_M1 <= 92) && (pos_M2 >= 88 && pos_M2 <= 92)){
         delay(1000);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
@@ -220,7 +216,7 @@ void loop() {
       target_M2 = 90;
 
       //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= -5 && pos_M1 <= 5) && (pos_M2 >= 85 && pos_M2 <= 95)){
+      if((pos_M1 >= -2 && pos_M1 <= 2) && (pos_M2 >= 88 && pos_M2 <= 92)){
         delay(1000);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
@@ -228,7 +224,23 @@ void loop() {
       }
       break;
   }
-  
+
+  Serial.print("State:");
+  Serial.print(state);
+  Serial.print(" | ");
+  Serial.print("target_M1:");
+  Serial.print(target_M1);
+  Serial.print(" | ");
+  Serial.print("pos_M1:");
+  Serial.print(pos_M1);
+  Serial.print(" | ");
+  Serial.print("target_M2:");
+  Serial.print(target_M2);
+  Serial.print(" | ");
+  Serial.print("pos_M2:");
+  Serial.println(pos_M2);
+
+  /*
   Serial.print("target_M1:");
   Serial.print(target_M1);
   Serial.print(" | ");
@@ -246,7 +258,8 @@ void loop() {
   Serial.print(" | ");
   Serial.print("controlSignal_M2:");
   Serial.println(controlSignal_M2);
-  
+  */
+
   /*
   Serial.print("end_time:");
   Serial.print(end_time);
