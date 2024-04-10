@@ -21,6 +21,7 @@ int state = HOME;
 typedef struct struct_message{
   int encoder_M1;
   int encoder_M2;
+  int start;
 }struct_message;
 
 struct_message encoderData;
@@ -168,56 +169,51 @@ void moveMotor(int in1, int in2, int pwm_pin, double u){
 }
 
 void loop() {
-  //#define START = digitalRead(start_pin);
-  //#define RESET = digitalRead(reset_pin);
 
   switch(state){
     case HOME:
-      //if(START) state = DRAW_1;
-      target_M1 = 0;
-      target_M2 = 0;
+      target_M1 = -25;
+      target_M2 = -25;
 
-      if((pos_M1 >= -2 && pos_M1 <= 2) && (pos_M2 >= -2 && pos_M2 <= 2)){
-        delay(1000);
+      //go to next state if; +/- 2 degree margin of error and start enabled
+      if((abs(pos_M1 - target_M1) <= 2) && (abs(pos_M2 - target_M2) <= 2) && encoderData.start){
+        //delay(500);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
         state = DRAW_1;
       }
       break;
     case DRAW_1:
-      //if(RESET) state = HOME;
-      target_M1 = 90;
-      target_M2 = 0;
+      target_M1 = 25;
+      target_M2 = -25;
 
-      //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= 88 && pos_M1 <= 92) && (pos_M2 >= -2 && pos_M2 <= 2)){
-        delay(1000);
-        integralPrev_M1 = 0.0;
-        integralPrev_M2 = 0.0;
-        state = DRAW_2;
+      //go to next state if; +/- 2 degree margin of error
+      if((abs(pos_M1 - target_M1) <= 2) && (abs(pos_M2 - target_M2) <= 2)){
+      //delay(500);
+      integralPrev_M1 = 0.0;
+      integralPrev_M2 = 0.0;
+      state = DRAW_2;
       }
       break;
     case DRAW_2:
-      //if(RESET) state = HOME;
-      target_M1 = 90;
-      target_M2 = 90;
+      target_M1 = 25;
+      target_M2 = 25;
 
-      //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= 88 && pos_M1 <= 92) && (pos_M2 >= 88 && pos_M2 <= 92)){
-        delay(1000);
+      //go to next state if; +/- 2 degree margin of error
+      if((abs(pos_M1 - target_M1) <= 2) && (abs(pos_M2 - target_M2) <= 2)){
+        //delay(500);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
         state = DRAW_3;
       }
       break;
     case DRAW_3:
-      //if(RESET) state = HOME;
-      target_M1 = 0;
-      target_M2 = 90;
+      target_M1 = -25;
+      target_M2 = 25;
 
-      //go to next state if; +/- 5 degree margin of error
-      if((pos_M1 >= -2 && pos_M1 <= 2) && (pos_M2 >= 88 && pos_M2 <= 92)){
-        delay(1000);
+      //go to next state if; +/- 2 degree margin of error
+      if((abs(pos_M1 - target_M1) <= 2) && (abs(pos_M2 - target_M2) <= 2)){
+        //delay(500);
         integralPrev_M1 = 0.0;
         integralPrev_M2 = 0.0;
         state = HOME;
@@ -241,6 +237,9 @@ void loop() {
   Serial.println(pos_M2);
 
   /*
+  Serial.print("Start:");
+  Serial.print(encoderData.start);
+  Serial.print(" | ");
   Serial.print("target_M1:");
   Serial.print(target_M1);
   Serial.print(" | ");

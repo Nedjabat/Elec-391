@@ -6,7 +6,9 @@
 #define ENCB_M1        18 //WHITE, M1 other encoder pin, GPIO18
 #define ENCA_M2        19 //YELLOW, M2 (Pitch) encoder interrupt pin, GPIO19
 #define ENCB_M2        21 //WHITE, M2 other encoder pin, GPIO21
-#define STORE_BUTTON   32 //Button to store current encoder positions to EEPROM
+#define START_BUTTON   25 //Button to start the drawing
+#define START_BUTTON_POWER 26 //Power for START_BUTTON
+//#define STORE_BUTTON   32 //Button to store current encoder positions to EEPROM
 
 #define readA_M1 bitRead(GPIO.in,ENCA_M1)  //faster than digitalRead
 #define readB_M1 bitRead(GPIO.in,ENCB_M1)
@@ -20,6 +22,7 @@ const int ENCODER2_POS_ADDR = sizeof(int); // EEPROM address to store the second
 typedef struct struct_message{
   volatile int encoder_M1;
   volatile int encoder_M2;
+  int start;
 } struct_message;
 
 struct_message encoderData;
@@ -84,8 +87,10 @@ void setup() {
   pinMode(ENCB_M1,INPUT);
   pinMode(ENCA_M2,INPUT);
   pinMode(ENCB_M2,INPUT);
+  pinMode(START_BUTTON, INPUT_PULLUP);
+  pinMode(START_BUTTON_POWER, OUTPUT);
   //pinMode(STORE_BUTTON, INPUT_PULLUP);
-  
+
   /*
   //read last encoder positions from EEPROM
   if(!EEPROM.begin(EEPROM_SIZE)){
@@ -132,6 +137,12 @@ void loop() {
     }
   }
   */
+  
+  //Power start button
+  digitalWrite(START_BUTTON_POWER, LOW);
+
+  //Read start button to initialize drawing
+  encoderData.start = !digitalRead(START_BUTTON);
 
   esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &encoderData, sizeof(encoderData));
 
@@ -151,6 +162,9 @@ void loop() {
   Serial.println(digitalRead(ENCB_M1));
   */
 
+  Serial.print("Start: ");
+  Serial.print(encoderData.start);
+  Serial.print(" | ");
   Serial.print("encoder_M1: ");
   Serial.print(encoderData.encoder_M1/134);
   Serial.print(" | ");
